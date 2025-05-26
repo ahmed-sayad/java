@@ -1,2 +1,2 @@
-@Library('shared-lib') _
+@Library('sharedlib') _
 javaPipeline.run()
