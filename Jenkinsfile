@@ -9,25 +9,19 @@ pipeline {
     }
 
     stages {
-        stage('Clone') {
-            steps {
-                echo 'Cloning done by Jenkins'
-            }
-        }
-
-        stage('Build the project') {
+        stage('Build') {
             steps {
                 sh 'mvn clean install'
             }
         }
 
-        stage('Test the project') {
+        stage('Test') {
             steps {
                 script {
                     try {
                         sh 'mvn test'
                     } catch (err) {
-                        echo "Tests failed or not found, continuing pipeline"
+                        echo "Tests failed"
                     }
                 }
             }
@@ -36,7 +30,7 @@ pipeline {
         stage('Docker Build & Push') {
             steps {
                 script {
-                    docker.buildAndPush("ahmedelsayad/java-app")
+                    buildAndPush("ahmedelsayad/java-app")
                 }
             }
         }
