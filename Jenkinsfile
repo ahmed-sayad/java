@@ -2,7 +2,7 @@ pipeline {
     agent any
 
         environment {
-            MAVEN_HOME = tool 'maven4.0'
+            MAVEN_HOME = tool 'maven3.8'
         }
 
     stages {
