@@ -6,7 +6,6 @@ pipeline {
     PATH = "${MAVEN_HOME}/bin:${env.PATH}"
     }
 
-
     stages {
         stage('Clone') {
             steps {
