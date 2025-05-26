@@ -1,6 +1,12 @@
 pipeline {
     agent any
 
+    environment {
+    MAVEN_HOME = tool 'M3'
+    PATH = "${MAVEN_HOME}/bin:${env.PATH}"
+    }
+
+
     stages {
         stage('Clone') {
             steps {
