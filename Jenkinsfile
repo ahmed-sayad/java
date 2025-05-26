@@ -1,9 +1,9 @@
 pipeline {
     agent any
 
-    environment {
-    MAVEN_HOME = tool 'M3'
-    }
+        environment {
+            MAVEN_HOME = tool 'maven4.0'
+        }
 
     stages {
         stage('Clone') {
